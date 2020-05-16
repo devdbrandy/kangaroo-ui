@@ -1,0 +1,49 @@
+<main class="kangaroo">
+  <!-- kangaroo blocks -->
+  <section class="kangaroo__blocks">
+    <form autocomplete="off">
+      <input
+        type="tel"
+        maxlength="1"
+        max="9"
+        [(ngModel)]="kangarooOne"
+        (ngModelChange)="onChange()"
+        name="kangarooOne"
+      />
+      <input
+        type="tel"
+        maxlength="1"
+        max="9"
+        [(ngModel)]="metreOne"
+        (ngModelChange)="onChange()"
+        name="kangarooOne"
+      />
+      <input
+        type="tel"
+        maxlength="1"
+        max="9"
+        [(ngModel)]="kangarooTwo"
+        (ngModelChange)="onChange()"
+        name="kangarooTwo"
+      />
+      <input
+        type="tel"
+        maxlength="1"
+        max="9"
+        [(ngModel)]="metreTwo"
+        (ngModelChange)="onChange()"
+        name="kangarooOne"
+      />
+    </form>
+  </section>
+
+  <!-- result -->
+  <section class="kangaroo__result">
+    <h3>Result</h3>
+    <span
+      class="kangaroo__result--text"
+      [ngClass]="{ success: result === 'YES', danger: result === 'NO' }"
+      >{{ result || '---' }}</span
+    >
+  </section>
+</main>

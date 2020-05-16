@@ -1,0 +1,33 @@
+<main class="history">
+  <section
+    class="history__section"
+    *ngIf="histories.length > 0; else emptyHistory"
+  >
+    <button class="history__section--clear-btn" (click)="clearHistory()">
+      Clear History
+    </button>
+
+    <table class="history__section--table">
+      <thead>
+        <tr>
+          <th>S/N</th>
+          <th>Date</th>
+          <th>Fields</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let history of histories; let index = index">
+          <td>{{ index + 1 }}</td>
+          <td>{{ history.date | date: 'short' }}</td>
+          <td>{{ history.fields }}</td>
+          <td>{{ history.result }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <ng-template #emptyHistory>
+    <p class="history--empty">Oops! History is empty.</p>
+  </ng-template>
+</main>

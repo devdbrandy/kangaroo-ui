@@ -1,0 +1,58 @@
+@import 'config';
+
+.kangaroo {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 3rem;
+  width: 80%;
+  margin: 10rem auto;
+
+  &__blocks {
+
+    form {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      justify-content: space-between;
+
+      input {
+        width: 100%;
+        padding: 1rem 7rem;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        font-size: 4rem;
+        font-weight: bold;
+        text-align: center;
+
+        &:focus {
+          outline: none;
+          border: 2px solid $primary-color;
+        }
+      }
+    }
+  }
+
+  &__result {
+    text-align: center;
+
+    h3 {
+      font-size: 3rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    &--text {
+      font-size: 5rem;
+      letter-spacing: 2px;
+
+      &.success {
+        color: $primary-color;
+      }
+
+      &.danger {
+        color: $danger-color;
+      }
+    }
+  }
+}
